@@ -42,7 +42,7 @@ To get a local copy up and running follow these simple steps.
 
 ## Screenshots
 
-_(Add screenshots of your application here)_
+
 
 ## License
 
