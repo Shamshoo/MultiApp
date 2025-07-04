@@ -42,6 +42,13 @@ To get a local copy up and running follow these simple steps.
 
 ## Screenshots
 
+![image](https://github.com/user-attachments/assets/48d052da-7aa5-474b-9b5c-8c91e01ad98f)
+
+![image](https://github.com/user-attachments/assets/3cc9e54b-d02e-4910-b7ad-09d9eddf9b5e)
+
+![image](https://github.com/user-attachments/assets/4cad31f9-e1ad-414b-8bff-e36a091af609)
+
+
 
 
 ## License
