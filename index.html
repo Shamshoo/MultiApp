@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="title-bar">
+        <button id="notes-back-btn" class="top-left-back-btn hidden">←</button>
+        <button id="pm-back-btn" class="top-left-back-btn hidden">←</button>
+        <div class="title-bar-buttons">
+            <div class="dot" id="minimize-btn"></div>
+            <div class="dot" id="maximize-btn"></div>
+            <div class="dot" id="close-btn"></div>
+        </div>
+    </div>
+    <div id="home-page" class="home-container">
+        <canvas id="lines-canvas"></canvas>
+        <button id="notes-btn" class="home-btn">Notes</button>
+        <button id="password-manager-btn" class="home-btn">Password Manager</button>
+    </div>
+    <div class="container hidden">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Channels</h2>
+            </div>
+            <ul id="channel-list">
+                <!-- Channels will be added here -->
+            </ul>
+            <div class="sidebar-menu">
+                <button id="menu-btn">Menu</button>
+                <div id="menu-options">
+                    <button id="add-channel-btn">New</button>
+                    <button id="import-btn">Import</button>
+                    <button id="export-btn">Export</button>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="pinned-container">
+                    <button id="pinned-messages-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                    </button>
+                    <div id="pinned-messages-dropdown" class="hidden"></div>
+                </div>
+                <div class="search-bar-container">
+                    <input type="text" id="search-input" placeholder="Search">
+                    <div id="search-results-container" class="hidden">
+                        <div class="search-results-header">
+                            <h3 id="search-results-count"></h3>
+                            <div class="sort-options">
+                                <button class="sort-btn active" data-sort="new">New</button>
+                                <button class="sort-btn" data-sort="old">Old</button>
+                                <button class="sort-btn" data-sort="relevant">Relevant</button>
+                            </div>
+                        </div>
+                        <div id="search-results-list"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="notes-container">
+                <div id="notes-content"></div>
+                <div class="chat-box">
+                    <button id="upload-btn">Upload</button>
+                    <input type="text" id="note-input" placeholder="Message #channel-name">
+                    <button id="send-btn">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="add-channel-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>New Channel</h3>
+            <input type="text" id="new-channel-name" placeholder="Channel Name">
+            <input type="password" id="new-channel-password" placeholder="Password (optional)">
+            <button id="create-channel-btn">Create</button>
+            <button id="cancel-channel-btn">Cancel</button>
+        </div>
+    </div>
+    <div id="password-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Enter Password</h3>
+            <input type="password" id="password-input" placeholder="Password">
+            <button id="password-submit">Unlock</button>
+            <button id="cancel-password-btn">Cancel</button>
+        </div>
+    </div>
+    <div id="image-modal" class="modal hidden">
+        <span class="close-image-btn">&times;</span>
+        <img class="modal-image" id="modal-image">
+        <div id="image-controls" class="hidden"></div>
+    </div>
+    <div id="video-modal" class="modal hidden">
+        <span class="close-video-btn">&times;</span>
+        <video id="modal-video" class="modal-video" src=""></video>
+        <div id="video-controls">
+            <button id="play-pause-btn">Play</button>
+            <input type="range" id="seek-bar" value="0">
+            <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+            <button id="fullscreen-btn">Fullscreen</button>
+        </div>
+    </div>
+    <div id="password-manager-page" class="hidden">
+        <div class="password-manager-layout">
+            <div class="pm-sidebar">
+                <div class="pm-search-bar">
+                    <input type="text" placeholder="Search">
+                </div>
+                <ul class="pm-entry-list">
+                    <!-- Password entries will be added here -->
+                </ul>
+            </div>
+            <div class="pm-main-content">
+                <div class="pm-top-bar">
+                    <button id="new-password-btn">+ New</button>
+                </div>
+                <div class="pm-entry-details">
+                    <!-- Selected entry details will be shown here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+    <script src="lines.js"></script>
+</body>
+</html>
